@@ -1,0 +1,22 @@
+{
+  "name": "aoc-18",
+  "version": "1.0.0",
+  "description": "Advent of Code 2018",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "mocha"
+  },
+  "keywords": [
+    "advent",
+    "code",
+    "christmas"
+  ],
+  "author": "oreoz",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "commander": "^2.19.0",
+    "mocha": "^5.2.0"
+  }
+}
