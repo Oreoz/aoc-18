@@ -5,7 +5,6 @@ describe('Advent of Code \'18', function () {
   const one = require('../src/days/one');
 
   describe('Day 1', function () {
-
     it('should read the inputs provided via the text file', function () {
       assert.equal(one.inputs().length, 1025);
     });
@@ -21,6 +20,33 @@ describe('Advent of Code \'18', function () {
       assert.equal(one.extra([+3, +3, +4, -2, -4]), 10);
       assert.equal(one.extra([-6, +3, +8, +5, -6]), 5);
       assert.equal(one.extra([+7, +7, -2, -7, -4]), 14);
+    });
+  });
+
+  const two = require('../src/days/two');
+
+  describe('Day 2', function () {
+    it('it tallies the occurences', function () {
+      assert.deepEqual(two.tally(two.occurences('abcdef')), { 2: false, 3: false });
+      assert.deepEqual(two.tally(two.occurences('bababc')), { 2: true, 3: true });
+      assert.deepEqual(two.tally(two.occurences('abbcde')), { 2: true, 3: false });
+      assert.deepEqual(two.tally(two.occurences('abcccd')), { 2: false, 3: true });
+      assert.deepEqual(two.tally(two.occurences('aabcdd')), { 2: true, 3: false });
+      assert.deepEqual(two.tally(two.occurences('abcdee')), { 2: true, 3: false });
+      assert.deepEqual(two.tally(two.occurences('ababab')), { 2: false, 3: true });
+    });
+
+    it('provides the correct checksum', function () {
+      const ids = [
+        'abcdef',
+        'bababc',
+        'abbcde',
+        'abcccd',
+        'aabcdd',
+        'abcdee',
+        'ababab'
+      ];
+      assert.equal(two.checksum(ids), 12);
     });
   });
 
